@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import styled from "styled-components";
 import { secondaryColor, secondaryDarkColor } from "../Colors/colors";
