@@ -3,9 +3,9 @@ import { ThemeContext } from "../Context/ThemeContext";
 import ProjectCard from "../Components/ProjectCard";
 import styled from "styled-components";
 import { device } from "../Breakpoints/breakpoints";
-import pokedexImage from "../Images/pages/pokedex.png";
-import rickAndMortyImage from "../Images/pages/rickAndMorty.png";
-import portafolioImage from "../Images/pages/portafolio.png";
+import pokedexImage from "../Images/pages/pokedex.jpg";
+import rickAndMortyImage from "../Images/pages/rickAndMorty.jpg";
+import portafolioImage from "../Images/pages/portafolio.jpg";
 import {
   background,
   backgroundDark,

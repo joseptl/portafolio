@@ -161,7 +161,9 @@ const Menu = () => {
           </a>
         </MyMenuItem>
         <MyMenuItem theme={theme}>
-          <a href="#Contact">Contacto</a>
+          <a onClick={handleClose} href="#Contact">
+            Contacto
+          </a>
         </MyMenuItem>
       </MyMenu>
     </MyMenuContainer>
