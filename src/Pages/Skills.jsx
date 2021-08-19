@@ -123,7 +123,7 @@ const Skills = () => {
 
   const options = {
     root: null,
-    rootMargin: "0px",
+    rootMargin: "-100px",
     treshhold: 1,
   };
 

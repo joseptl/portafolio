@@ -53,6 +53,7 @@ const MyMenu = styled.div`
   }
 `;
 const MyMenuItem = styled.div`
+  cursor: pointer;
   padding: auto;
   padding-bottom: 5rem;
   vertical-align: middle;

@@ -3,6 +3,7 @@ import { ThemeContext } from "../Context/ThemeContext";
 import styled from "styled-components";
 
 const TopButtom = styled.button`
+  cursor: pointer;
   position: fixed;
   z-index: 1000;
   bottom: 80px;

@@ -112,7 +112,7 @@ const MyContact = styled.div`
 const Footer = () => {
   const { theme } = useContext(ThemeContext);
   return (
-    <MyFooter theme={theme}>
+    <MyFooter id="Contact" theme={theme}>
       <MyContactInfo>
         <MyContactTitle theme={theme}>Información de Contacto</MyContactTitle>
         <MyContact theme={theme}>
