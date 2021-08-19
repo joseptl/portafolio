@@ -99,6 +99,7 @@ const SkillsContainer = styled.div`
   width: 95%;
   margin: auto;
   transition: all 700ms ease-in-out;
+  padding: 80px 0 80px 0;
   opacity: 0;
   @media ${device.tablet} {
     width: 60%;

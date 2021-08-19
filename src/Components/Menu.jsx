@@ -79,6 +79,18 @@ const MyMenuItem = styled.div`
     padding-right: 1rem;
     font-family: "Merriweather", serif;
     font-weight: lighter;
+
+    :hover {
+      a {
+        position: relative;
+        bottom: 2px;
+        border-bottom: thin solid
+          ${(props) =>
+            props.theme === "light"
+              ? secondaryColor
+              : secondaryDarkColor} !important;
+      }
+    }
   }
 `;
 const MyMenuButton = styled.div`

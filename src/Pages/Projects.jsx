@@ -43,6 +43,7 @@ const projectsList = [
 ];
 
 const MySection = styled.section`
+  padding: 80px 0 80px 0;
   width: 100vw;
   min-height: 100vh;
   display: flex;

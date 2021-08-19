@@ -10,7 +10,7 @@ import {
 } from "../Colors/colors";
 
 const MyFooter = styled.footer`
-  height: 50vh;
+  height: 30vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -33,9 +33,7 @@ const MySNContainer = styled.div`
   display: flex;
   flex-direction: row;
   font-size: 1rem;
-  @media ${device.laptop} {
-    flex-direction: column;
-  }
+  padding-top: 25px;
 `;
 
 const MySN = styled.div`
@@ -56,7 +54,10 @@ const MySN = styled.div`
   }
   @media ${device.laptop} {
     font-size: 1.2rem;
-    padding-right: 0;
+    :hover {
+      position: relative;
+      bottom: 5px;
+    }
   }
 `;
 
@@ -86,16 +87,15 @@ const MyContact = styled.div`
   div {
     height: 35px;
     width: 35px;
-    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     text-align: center;
     border: thin solid
       ${(props) =>
         props.theme === "light" ? primaryColor : secondaryDarkColor};
     border-radius: 100%;
     i {
-      width: 20px;
-      height: 20px;
-      padding: auto;
     }
   }
   span {
@@ -105,7 +105,6 @@ const MyContact = styled.div`
   @media ${device.laptop} {
     font-size: 1.2rem;
     div {
-      padding-top: 3.5px;
     }
   }
 `;

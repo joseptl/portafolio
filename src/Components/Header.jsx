@@ -12,6 +12,8 @@ import {
 
 const MyHeader = styled.header`
   height: 80px;
+  position: sticky;
+  top: 0px;
   width: 100vw;
   display: flex;
   justify-content: space-between;
