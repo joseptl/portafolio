@@ -5,8 +5,6 @@ import { device } from "../Breakpoints/breakpoints";
 import {
   background,
   backgroundDark,
-  primaryColor,
-  primaryDarkColor,
   secondaryColor,
   secondaryDarkColor,
 } from "../Colors/colors";
