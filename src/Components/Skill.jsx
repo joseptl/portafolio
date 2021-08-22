@@ -20,8 +20,8 @@ const MyImg = styled.img`
     height: 80px;
   }
   @media ${device.laptop} {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
   }
 `;
 const MyFigCaption = styled.figcaption`

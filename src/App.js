@@ -7,6 +7,7 @@ import Skills from './Pages/Skills'
 import Projects from './Pages/Projects';
 import { ThemeProvider } from './Context/ThemeContext';
 import ToTop from './Components/ToTop';
+import Certificates from './Pages/Certificates';
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Home/>
         <About/>
         <Skills/>
+        <Certificates/>
         <Projects/>
         <ToTop/>
         <Footer/>

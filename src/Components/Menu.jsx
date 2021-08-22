@@ -19,8 +19,8 @@ const MyMenu = styled.div`
     width: 100vw;
     padding: auto;
     overflow-y: auto;
-    padding-top: 20px;
-    top: 80px;
+    padding-top: 50px;
+    top: 60px;
     left: 0px;
     z-index: ${(props) => (props.open ? 2 : 0)};
     background-color: ${(props) =>
@@ -153,6 +153,11 @@ const Menu = () => {
         <MyMenuItem theme={theme}>
           <a onClick={handleClose} href="#Skills">
             Habilidades
+          </a>
+        </MyMenuItem>
+        <MyMenuItem theme={theme}>
+          <a onClick={handleClose} href="#Certificates">
+            Certificados
           </a>
         </MyMenuItem>
         <MyMenuItem theme={theme}>

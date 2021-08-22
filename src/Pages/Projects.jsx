@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
-import ProjectCard from "../Components/ProjectCard";
 import styled from "styled-components";
+import ProjectCard from "../Components/ProjectCard";
 import { device } from "../Breakpoints/breakpoints";
 import pokedexImage from "../Images/pages/pokedex.jpg";
 import rickAndMortyImage from "../Images/pages/rickAndMorty.jpg";
@@ -12,6 +12,7 @@ import {
   secondaryColor,
   secondaryDarkColor,
 } from "../Colors/colors";
+import { useObserve } from "../Hooks/useObserve";
 
 const projectsList = [
   {
@@ -43,11 +44,11 @@ const projectsList = [
 ];
 
 const MySection = styled.section`
-  padding: 80px 0 80px 0;
   width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   align-content: center;
   align-items: center;
   background-color: ${(props) =>
@@ -57,6 +58,7 @@ const MySection = styled.section`
 const ProjectTitle = styled.h2`
   text-align: center;
   font-family: "Roboto", sans-serif;
+  position: relative;
   font-size: 2rem;
   padding: 2rem;
   padding-bottom: 1rem;
@@ -68,32 +70,57 @@ const ProjectTitle = styled.h2`
 `;
 
 const CardsContainer = styled.div`
-  @media ${device.laptop} {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+`;
+
+const ProjectContainer = styled.div`
+  width: 95%;
+  margin: auto;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  transition: all 1000ms ease-in-out;
+  z-index: 1;
+  position: relative;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  right: ${(props) => (props.visible ? "0px" : "100%")};
+
+  @media ${device.tablet} {
+    width: 95%;
   }
 `;
 
 const Projects = () => {
+  const options = {
+    root: null,
+    rootMargin: "-100px",
+    treshhold: 1,
+  };
+  const ProjectsRef = useRef(null);
+  const visible = useObserve(ProjectsRef, options);
   const { theme } = useContext(ThemeContext);
   return (
-    <MySection id="Projects" theme={theme}>
-      <ProjectTitle theme={theme}>Proyectos</ProjectTitle>
-      <CardsContainer>
-        {projectsList.map((project, id) => (
-          <ProjectCard
-            nombre={project.nombre}
-            descripcion={project.descripcion}
-            tecnologias={project.tecnologias}
-            repositorio={project.repositorio}
-            link={project.link}
-            imagen={project.imagen}
-          />
-        ))}
-      </CardsContainer>
+    <MySection ref={ProjectsRef} id="Projects" theme={theme}>
+      <ProjectContainer visible={visible}>
+        <ProjectTitle theme={theme}>Proyectos</ProjectTitle>
+        <CardsContainer>
+          {projectsList.map((project, id) => (
+            <ProjectCard
+              key={id}
+              nombre={project.nombre}
+              descripcion={project.descripcion}
+              tecnologias={project.tecnologias}
+              repositorio={project.repositorio}
+              link={project.link}
+              imagen={project.imagen}
+            />
+          ))}
+        </CardsContainer>
+      </ProjectContainer>
     </MySection>
   );
 };

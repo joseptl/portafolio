@@ -12,7 +12,7 @@ import {
 } from "../Colors/colors";
 
 const CardContainer = styled.div`
-  width: 90%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;

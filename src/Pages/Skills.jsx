@@ -59,8 +59,9 @@ const herramientas = [
 ];
 
 const MySection = styled.section`
-  width: 100vw;
-  min-height: 100vh;
+  max-width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -85,8 +86,9 @@ const SkillsListContainer = styled.div`
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
   width: 95%;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   padding-bottom: 1.5rem;
   padding-top: 1.5rem;
@@ -98,9 +100,14 @@ const SkillsListContainer = styled.div`
 const SkillsContainer = styled.div`
   width: 95%;
   margin: auto;
-  transition: all 700ms ease-in-out;
-  padding: 80px 0 80px 0;
-  opacity: 0;
+  overflow: hidden;
+
+  transition: all 1000ms ease-in-out;
+  z-index: 1;
+  position: relative;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  left: ${(props) => (props.visible ? "0px" : "100%")};
+
   @media ${device.tablet} {
     width: 60%;
   }
@@ -119,7 +126,7 @@ const MySubtitle = styled.h5`
 
 const Skills = () => {
   const { theme } = useContext(ThemeContext);
-  const SkillsContainerRef = useRef(null);
+  const SkillsRef = useRef(null);
 
   const options = {
     root: null,
@@ -127,18 +134,11 @@ const Skills = () => {
     treshhold: 1,
   };
 
-  const callback = (entries) => {
-    const [entry] = entries;
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-    }
-  };
-
-  useObserve(SkillsContainerRef, callback, options);
+  const visible = useObserve(SkillsRef, options);
 
   return (
-    <MySection id="Skills" theme={theme}>
-      <SkillsContainer ref={SkillsContainerRef}>
+    <MySection ref={SkillsRef} id="Skills" theme={theme}>
+      <SkillsContainer visible={visible}>
         <SkillsTitle theme={theme}>Habilidades</SkillsTitle>
         <MySubtitle theme={theme}>Tecnologías</MySubtitle>
         <SkillsListContainer>

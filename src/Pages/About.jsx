@@ -53,8 +53,8 @@ const AboutText = styled.p`
 const AboutContainer = styled.div`
   width: 95%;
   margin: auto;
-  opacity: 0;
-  transition: all 700ms ease-in-out;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  transition: opacity 1000ms ease-in-out;
   @media ${device.tablet} {
     width: 60%;
     margin: auto;
@@ -65,8 +65,8 @@ const AboutContainer = styled.div`
 const MyFigure = styled.figure`
   display: none;
   @media ${device.tablet} {
-    opacity: 0;
-    transition: all 700ms ease-in-out;
+    opacity: ${(props) => (props.visible ? 1 : 0)};
+    transition: opacity 1000ms ease-in-out;
 
     width: 30%;
     display: flex;
@@ -81,31 +81,22 @@ const MyFigure = styled.figure`
 
 const About = () => {
   const { theme } = useContext(ThemeContext);
-  const AboutFigureRef = useRef(null);
-  const AboutContainerRef = useRef(null);
-
-  const callback = (entries) => {
-    const [entry] = entries;
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-    }
-  };
+  const AboutRef = useRef(null);
 
   const options = {
     root: null,
-    rootMargin: "0px",
+    rootMargin: "-100px",
     treshhold: 1,
   };
 
-  useObserve(AboutContainerRef, callback, options);
-  useObserve(AboutFigureRef, callback, options);
+  const visible = useObserve(AboutRef, options);
 
   return (
-    <Container theme={theme} id="About">
-      <MyFigure ref={AboutFigureRef}>
+    <Container ref={AboutRef} theme={theme} id="About">
+      <MyFigure visible={visible}>
         <img src={computador} alt="computador" />
       </MyFigure>
-      <AboutContainer ref={AboutContainerRef}>
+      <AboutContainer visible={visible}>
         <AboutTitle theme={theme}>Sobre Mí</AboutTitle>
         <AboutText theme={theme}>
           Soy un <b>Front-End Developer</b> especializado en React para la
