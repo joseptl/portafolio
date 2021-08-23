@@ -121,12 +121,6 @@ const Footer = () => {
           </div>
           <span>Joseptl551@gmail.com</span>
         </MyContact>
-        <MyContact theme={theme}>
-          <div>
-            <i className="fas fa-phone"></i>
-          </div>
-          <span>+58 412-0523198</span>
-        </MyContact>
       </MyContactInfo>
       <MySNContainer>
         <MySN theme={theme}>

@@ -12,6 +12,7 @@ import { ThemeContext } from "../Context/ThemeContext";
 const MyCarrusel = styled.div`
   width: 95vw;
   max-width: 720px;
+  height: 50%;
   max-height: 560px;
   overflow: hidden;
   display: flex;
@@ -26,6 +27,7 @@ const MyCarrusel = styled.div`
 const MyCarruselItem = styled.div`
   width: 95vw;
   max-width: 720px;
+  height: fit-content;
   position: ${(props) =>
     parseInt(props.position) === props.itemFocus ? "relative" : "absolute"};
   z-index: 1;
