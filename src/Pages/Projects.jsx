@@ -61,7 +61,6 @@ const ProjectTitle = styled.h2`
   position: relative;
   font-size: 2rem;
   padding: 2rem;
-  padding-bottom: 1rem;
   color: ${(props) =>
     props.theme === "light" ? secondaryColor : secondaryDarkColor};
   @media ${device.laptop} {

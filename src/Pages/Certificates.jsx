@@ -110,7 +110,6 @@ const CertificateTitle = styled.h2`
   margin: 0;
   font-size: 2rem;
   padding: 2rem;
-  padding-bottom: 0px;
   color: ${(props) =>
     props.theme === "light" ? secondaryColor : secondaryDarkColor};
   @media ${device.laptop} {
