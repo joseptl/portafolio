@@ -41,7 +41,7 @@ const MySN = styled.div`
   padding-right: 10px;
   a {
     text-decoration: none;
-    font-family: "Merriweather", serif;
+    font-family: "Roboto", sans-serif;
     color: ${(props) =>
       props.theme === "light" ? primaryColor : secondaryDarkColor};
     :visited {
@@ -69,7 +69,8 @@ const MyContactTitle = styled.span`
   font-size: 1.3rem;
   text-align: center;
   font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  
+  font-family: Raleway, Arial;
   color: ${(props) =>
     props.theme === "light" ? primaryColor : secondaryDarkColor};
   @media ${device.laptop} {
@@ -100,7 +101,7 @@ const MyContact = styled.div`
   }
   span {
     padding-left: 5px;
-    font-family: "Merriweather", serif;
+    font-family: "Roboto", sans-serif;
   }
   @media ${device.laptop} {
     font-size: 1.2rem;

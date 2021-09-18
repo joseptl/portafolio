@@ -12,66 +12,53 @@ import {
 } from "../Colors/colors";
 
 const CardContainer = styled.div`
-  width: 95%;
+  width: 80%;
+  height: fit-content;
+  position:relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) =>
-    props.theme === "light" ? `${secondaryColor}df` : `${primaryDarkColor}df`};
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  padding: 2rem;
   text-align: justify;
-  border-radius: 20px;
+  z-index:1;
+  transition: all 500ms ease-in;
+
+  :hover > div{
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  img {
+    width: 100%;
+    object-fit: scale-down;
+  }
 
   @media ${device.laptop} {
     width: 45%;
   }
 `;
-const ImageContainer = styled.figure`
-  width: 100%;
-  img {
-    width: 100%;
-    object-fit: scale-down;
-  }
-  @media ${device.laptop} {
-  }
-`;
 
 const CardTitle = styled.h5`
-  font-family: "Roboto", sans-serif;
+  font-family: Raleway, Arial;
   color: ${(props) =>
     props.theme === "light" ? primaryColor : secondaryDarkColor};
-  font-size: 1.3rem;
+  font-size: 1rem;
   text-align: center;
-  @media ${device.laptop} {
-    font-size: 1.8rem;
-  }
-`;
-
-const CardP = styled.p`
-  font-family: "Merriweather", serif;
-  color: ${(props) => (props.theme === "light" ? parrafo : parrafoDark)};
-  font-size: 0.8rem;
-  text-align: justify;
-  padding: 0.5rem 0;
-  height: 40%;
-  @media ${device.laptop} {
-    font-size: 1.3rem;
+  @media ${device.tablet} {
+    font-size: 1.5rem;
   }
 `;
 
 const CardLinksContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 80%;
+  width: 50%;
   padding-top: 1.2rem;
-  @media ${device.laptop} {
-    width: 50%;
-  }
 `;
 
 const CardLink = styled.a`
@@ -84,18 +71,18 @@ const CardLink = styled.a`
     color: ${(props) => (props.theme === "light" ? parrafo : parrafoDark)};
   }
   i {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   span {
-    font-family: "Merriweather", serif;
-    font-size: 0.8rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.6rem;
   }
-  @media ${device.laptop} {
+  @media ${device.tablet} {
     i {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
     span {
-      font-size: 1.3rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -103,12 +90,28 @@ const CardLink = styled.a`
 const CardTec = styled.span`
   color: ${(props) =>
     props.theme === "light" ? primaryColor : secondaryDarkColor};
-  font-size: 0.8rem;
-  font-family: "Merriweather", serif;
-  @media ${device.laptop} {
-    font-size: 1.3rem;
+  font-size: 1rem;
+  font-family: Raleway, Arial;
+  @media ${device.tablet} {
+    font-size: 1.2rem;
   }
 `;
+
+const DataContainer = styled.div`
+position: absolute;
+display: flex;
+visibility: hidden;
+opacity: 0;
+flex-direction: column;
+justify-content: center;
+transition: all 500ms ease-in;
+align-items: center;
+background-color: ${(props) =>
+    props.theme === "light" ? `${secondaryColor}dd` : `${primaryDarkColor}dd`};
+width: 100%;
+height: 100%;
+z-index:2;
+`
 
 const ProjectCard = ({
   nombre,
@@ -121,27 +124,26 @@ const ProjectCard = ({
   const { theme } = useContext(ThemeContext);
   return (
     <CardContainer theme={theme}>
-      <CardTitle theme={theme}>{nombre}</CardTitle>
-      <CardP theme={theme}>{descripcion}</CardP>
-      <ImageContainer>
         <img src={imagen} alt={nombre} />
-      </ImageContainer>
-      <CardTec theme={theme}>{tecnologias}</CardTec>
-      <CardLinksContainer theme={theme}>
-        <CardLink
-          href={repositorio}
-          target="_blank"
-          rel="noreferrer"
-          theme={theme}
-        >
-          <i className="fab fa-github"></i>
-          <span>Repositorio</span>
-        </CardLink>
-        <CardLink href={link} target="_blank" rel="noreferrer" theme={theme}>
-          <i className="fas fa-desktop"></i>
-          <span>Link</span>
-        </CardLink>
-      </CardLinksContainer>
+      <DataContainer theme={theme}>
+        <CardTitle theme={theme}>{nombre}</CardTitle>
+        <CardTec theme={theme}>{tecnologias}</CardTec>
+        <CardLinksContainer theme={theme}>
+          <CardLink
+            href={repositorio}
+            target="_blank"
+            rel="noreferrer"
+            theme={theme}
+            >
+            <i className="fab fa-github"></i>
+            <span>Repositorio</span>
+          </CardLink>
+          <CardLink href={link} target="_blank" rel="noreferrer" theme={theme}>
+            <i className="fas fa-desktop"></i>
+            <span>Link</span>
+          </CardLink>
+        </CardLinksContainer>
+      </DataContainer>
     </CardContainer>
   );
 };

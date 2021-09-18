@@ -77,20 +77,19 @@ const data = [
 
 const MySection = styled.section`
   width: 100vw;
-  min-height: 60vh;
   justify-content: center;
   overflow: hidden;
-  background: ${(props) =>
-    props.theme === "light"
-      ? `linear-gradient( 145deg, ${background}, #bbb)`
-      : `linear-gradient( 145deg, ${backgroundDark}, #000)`};
+  background-color: ${(props) =>
+    props.theme === "light" ? background : backgroundDark};
+    @media ${device.laptop}{
+      min-height: 100vh;
+    }
 `;
 
 const CarruselContainer = styled.div`
   opacity: ${(props) => (props.visible ? 1 : 0)};
   transition: opacity 1000ms ease-in-out;
   width: 100vw;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -100,11 +99,14 @@ const CarruselContainer = styled.div`
   justify-content: center;
   padding-bottom: 4rem;
   padding-top: 2rem;
+  @media ${device.laptop}{
+    min-height: 100vh;
+  }
 `;
 
 const CertificateTitle = styled.h2`
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: Raleway, Arial;
   margin: 0;
   font-size: 2rem;
   padding: 2rem;

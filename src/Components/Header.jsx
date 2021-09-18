@@ -42,8 +42,7 @@ const MyTitleContainer = styled.div`
 `;
 const MyTitle = styled.h2`
   font-size: 1.5rem;
-  font-family: "Roboto", sans-serif;
-  font-style: italic;
+  font-family: Raleway, Arial;
   @media ${device.laptop} {
     font-size: 1.8rem;
   }

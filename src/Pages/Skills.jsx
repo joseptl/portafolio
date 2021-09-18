@@ -66,14 +66,12 @@ const MySection = styled.section`
   flex-direction: column;
   align-content: center;
   align-items: center;
-  background: ${(props) =>
-    props.theme === "light"
-      ? `linear-gradient( 145deg, ${background}, #bbb)`
-      : `linear-gradient( 145deg, ${backgroundDark}, #000)`};
+  background-color: ${(props) =>
+    props.theme === "light" ? background : backgroundDark};
 `;
 const SkillsTitle = styled.h2`
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: Raleway, Arial;
   font-size: 2rem;
   padding: 2rem;
   color: ${(props) =>
@@ -93,7 +91,7 @@ const SkillsListContainer = styled.div`
   padding-bottom: 1.5rem;
   padding-top: 1.5rem;
   @media ${device.tablet} {
-    width: 80%;
+    width: 100%;
     justify-content: space-evenly;
   }
 `;
@@ -114,7 +112,7 @@ const SkillsContainer = styled.div`
 `;
 const MySubtitle = styled.h5`
   font-size: 1.3rem;
-  font-family: "Merriweather", serif;
+  font-family: "Roboto", sans-serif;
   color: ${(props) => (props.theme === "light" ? parrafo : parrafoDark)};
   text-align: center;
   padding: 0 0 1.5rem 0;

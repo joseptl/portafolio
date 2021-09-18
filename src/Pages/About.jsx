@@ -25,7 +25,7 @@ const Container = styled.section`
 `;
 const AboutTitle = styled.h2`
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: Raleway, Arial;
   font-size: 2rem;
   padding-top: 2rem;
   color: ${(props) =>
@@ -33,7 +33,7 @@ const AboutTitle = styled.h2`
   @media ${device.laptop} {
     font-size: 3rem;
   }
-`;
+  `;
 
 const AboutText = styled.p`
   text-align: justify;
@@ -41,7 +41,7 @@ const AboutText = styled.p`
   padding: 2rem;
   font-size: 1rem;
   text-indent: 2.5rem;
-  font-family: "Merriweather", serif;
+  font-family: "Roboto", sans-serif;
   font-weight: lighter;
   color: ${(props) => (props.theme === "light" ? parrafo : parrafoDark)};
   @media ${device.laptop} {

@@ -57,7 +57,7 @@ const MySection = styled.section`
 
 const ProjectTitle = styled.h2`
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: Raleway, Arial;
   position: relative;
   font-size: 2rem;
   padding: 2rem;

@@ -34,9 +34,10 @@ const MyCarruselItem = styled.div`
   visibility: ${(props) =>
     parseInt(props.position) === props.itemFocus ? "visible" : "hidden"};
   opacity: ${(props) => (parseInt(props.position) === props.itemFocus ? 1 : 0)};
+  perspective: 1000px;
   transition: all 1000ms ease-in;
   figure {
-    transition: all 500ms ease-in;
+    transition: all 1000ms ease-in;
     width: 95vw;
     max-width: 720px;
     img {
@@ -46,11 +47,11 @@ const MyCarruselItem = styled.div`
     }
   }
   :hover figure {
-    transition: all 500ms ease-in;
+    transition: all 600ms ease-in;
     opacity: 0.8;
   }
   :hover div {
-    transition: all 500ms ease-in;
+    transition: all 600ms ease-in;
     visibility: visible;
     opacity: 1;
   }
@@ -135,7 +136,8 @@ const MyCredential = styled.div`
 
   a {
     transition: all 500ms ease-in;
-    font-family: "Roboto", sans-serif;
+    font-family: Raleway, Arial;
+    font-weight: bold;
     font-size: 1rem;
     text-decoration: none;
     text-align: center;

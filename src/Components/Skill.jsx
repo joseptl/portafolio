@@ -10,6 +10,9 @@ const MyFigure = styled.figure`
   justify-content: center;
   align-items: center;
   width: 25%;
+  @media ${device.tablet}{
+    width: 20%;
+  }
 `;
 const MyImg = styled.img`
   width: 60px;
@@ -27,7 +30,7 @@ const MyImg = styled.img`
 const MyFigCaption = styled.figcaption`
   font-size: 1rem;
   color: ${(props) => (props.theme === "light" ? parrafo : parrafoDark)};
-  font-family: "Merriweather", serif;
+  font-family: "Roboto", sans-serif;
   @media ${device.laptop} {
     font-size: 1.5rem;
     line-height: 5vh;
