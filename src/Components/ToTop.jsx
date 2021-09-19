@@ -1,20 +1,21 @@
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import styled from "styled-components";
+import { parrafo, parrafoDark, secondaryColor, secondaryDarkColor } from "../Colors/colors";
 
 const TopButtom = styled.button`
   cursor: pointer;
   position: fixed;
-  z-index: 1000;
+  z-index: 2;
   bottom: 80px;
   right: 10px;
   height: 30px;
   width: 30px;
   border-radius: 100px;
-  background-color: #34495e;
+  background-color: ${(props)=>props.theme==="light"? secondaryColor : secondaryDarkColor };
   border: none;
   text-align: center;
-  color: #ffffff;
+  color: ${(props)=>props.theme==="light"? `${parrafoDark}` : parrafo };
   padding: auto;
   :active {
     border: none;

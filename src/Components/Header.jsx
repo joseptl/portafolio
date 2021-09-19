@@ -13,7 +13,7 @@ import {
 
 const MyHeader = styled.header`
   height: 60px;
-  position: sticky;
+  position: fixed;
   top: 0px;
   width: 100vw;
   z-index: 500;
@@ -32,6 +32,7 @@ const MyNav = styled.nav`
   display: flex;
   align-content: center;
   align-items: center;
+  height: 100%;
 `;
 const MyTitleContainer = styled.div`
   display: flex;

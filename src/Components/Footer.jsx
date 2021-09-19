@@ -6,6 +6,8 @@ import {
   primaryColor,
   primaryDarkColor,
   secondaryColor,
+   background,
+  backgroundDark,
   secondaryDarkColor,
 } from "../Colors/colors";
 
@@ -18,9 +20,9 @@ const MyFooter = styled.footer`
   padding: 40px 20px;
   align-items: center;
   background-color: ${(props) =>
-    props.theme === "light" ? secondaryColor : primaryDarkColor};
+    props.theme === "light" ? background : backgroundDark};
   color: ${(props) =>
-    props.theme === "light" ? primaryColor : secondaryDarkColor};
+    props.theme === "light" ? secondaryColor : secondaryDarkColor};
 
   @media ${device.laptop} {
     justify-content: space-between;
@@ -43,10 +45,10 @@ const MySN = styled.div`
     text-decoration: none;
     font-family: "Roboto", sans-serif;
     color: ${(props) =>
-      props.theme === "light" ? primaryColor : secondaryDarkColor};
+      props.theme === "light" ? secondaryColor : secondaryDarkColor};
     :visited {
       color: ${(props) =>
-        props.theme === "light" ? primaryColor : secondaryDarkColor};
+        props.theme === "light" ? secondaryColor : secondaryDarkColor};
     }
     i {
       padding-right: 5px;
@@ -72,7 +74,7 @@ const MyContactTitle = styled.span`
   
   font-family: Raleway, Arial;
   color: ${(props) =>
-    props.theme === "light" ? primaryColor : secondaryDarkColor};
+    props.theme === "light" ? secondaryColor : secondaryDarkColor};
   @media ${device.laptop} {
     font-size: 1.4rem;
   }
@@ -84,7 +86,7 @@ const MyContact = styled.div`
   font-size: 1rem;
   align-items: center;
   color: ${(props) =>
-    props.theme === "light" ? primaryColor : secondaryDarkColor};
+    props.theme === "light" ? secondaryColor : secondaryDarkColor};
   div {
     height: 35px;
     width: 35px;
@@ -94,7 +96,7 @@ const MyContact = styled.div`
     text-align: center;
     border: thin solid
       ${(props) =>
-        props.theme === "light" ? primaryColor : secondaryDarkColor};
+        props.theme === "light" ? secondaryColor : secondaryDarkColor};
     border-radius: 100%;
     i {
     }

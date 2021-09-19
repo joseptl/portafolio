@@ -19,7 +19,7 @@ const CardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;

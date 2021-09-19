@@ -12,7 +12,7 @@ import { ThemeContext } from "../Context/ThemeContext";
 const MyCarrusel = styled.div`
   width: 95vw;
   max-width: 720px;
-  height: 50%;
+  height: auto;
   max-height: 560px;
   overflow: hidden;
   display: flex;
@@ -45,10 +45,6 @@ const MyCarruselItem = styled.div`
       max-width: 720px;
       object-fit: scale-down;
     }
-  }
-  :hover figure {
-    transition: all 600ms ease-in;
-    opacity: 0.8;
   }
   :hover div {
     transition: all 600ms ease-in;
@@ -132,7 +128,7 @@ const MyCredential = styled.div`
   justify-content: center;
   border-radius: 10px;
   background-color: ${(props) =>
-    props.theme === "light" ? `${primaryColor}dd` : `${primaryDarkColor}dd`};
+    props.theme === "light" ? `${primaryColor}ee` : `${primaryDarkColor}ee`};
 
   a {
     transition: all 500ms ease-in;

@@ -77,12 +77,15 @@ const data = [
 
 const MySection = styled.section`
   width: 100vw;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
   background-color: ${(props) =>
     props.theme === "light" ? background : backgroundDark};
     @media ${device.laptop}{
-      min-height: 100vh;
+      height: 100vh;
     }
 `;
 
@@ -96,7 +99,6 @@ const CarruselContainer = styled.div`
   position: relative;
   align-content: center;
   align-items: center;
-  justify-content: center;
   padding-bottom: 4rem;
   padding-top: 2rem;
   @media ${device.laptop}{

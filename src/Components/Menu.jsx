@@ -22,7 +22,7 @@ const MyMenu = styled.div`
     padding-top: 50px;
     top: 60px;
     left: 0px;
-    z-index: ${(props) => (props.open ? 2 : 0)};
+    z-index: ${(props) => (props.open ? 2000 : 0)};
     background-color: ${(props) =>
       props.theme === "light" ? primaryColor : primaryDarkColor};
     height: 100%;
@@ -32,7 +32,7 @@ const MyMenu = styled.div`
     text-align: center;
     visibility: ${(props) => (props.open ? "visible" : "hidden")};
     opacity: ${(props) => (props.open ? 1 : 0)};
-    transition: opacity 0.5s ease-in;
+    transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
   }
 
   @media ${device.laptop} {
@@ -55,7 +55,7 @@ const MyMenu = styled.div`
 const MyMenuItem = styled.div`
   cursor: pointer;
   padding: auto;
-  padding-bottom: 5rem;
+  padding-bottom: 4rem;
   vertical-align: middle;
   font-family: "Roboto", sans-serif;
   font-weight: lighter;
@@ -95,19 +95,53 @@ const MyMenuItem = styled.div`
   }
 `;
 const MyMenuButton = styled.div`
-  height: 2.5rem;
-  width: 2.5rem;
-  padding: auto;
-  padding-right: 0;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  text-align: center;
-  vertical-align: center;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+    position: relative;
+    z-index: 9;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
   @media ${device.laptop} {
     display: none;
   }
+  span{
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    opacity: ${props=>props.open? 0 : 1};
+    top: 50%;
+    background-color: ${(props) =>
+    props.theme === "light" ? secondaryColor : secondaryDarkColor};
+    transform: translate(0, -50%);
+    transition: opacity 0.3s 0.3s;
+    
+  }
+  ::before,
+  ::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: ${(props) =>
+    props.theme === "light" ? secondaryColor : secondaryDarkColor};
+    transition: ${props=>props.open?"top 0.3s, bottom 0.3s, transform 0.3s 0.3s":"transform 0.3s, top 0.3s 0.3s, bottom 0.3s 0.3s"};
+  }
+
+  ::before{
+    top: ${props=>props.open?`calc(50% - 1px)`:`6px`};
+    transform: ${props=>props.open?`rotate(45deg)`:"none"};
+  }
+
+  ::after{
+    bottom: ${props=>props.open?`calc(50% - 1px)`:`6px`};
+    transform: ${props=>props.open?`rotate(-45deg)`:"none"};
+  }
+
 `;
 
 const MyMenuContainer = styled.div`
@@ -137,7 +171,7 @@ const Menu = () => {
   return (
     <MyMenuContainer>
       <MyMenuButton theme={theme} open={open} onClick={handleClick}>
-        <i className="fas fa-bars"></i>
+        <span></span>
       </MyMenuButton>
       <MyMenu open={open} theme={theme}>
         <MyMenuItem theme={theme}>
