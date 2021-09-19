@@ -3,8 +3,6 @@ import { ThemeContext } from "../Context/ThemeContext";
 import styled from "styled-components";
 import { device } from "../Breakpoints/breakpoints";
 import {
-  primaryColor,
-  primaryDarkColor,
   secondaryColor,
    background,
   backgroundDark,

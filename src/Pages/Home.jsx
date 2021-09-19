@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
-import fondo from "../Images/react-wallpaper.jpg"
 import styled from "styled-components";
 import {
   background,
