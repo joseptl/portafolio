@@ -83,6 +83,7 @@ const MyContact = styled.div`
   padding-top: 1rem;
   font-size: 1rem;
   align-items: center;
+  justify-content: center;
   color: ${(props) =>
     props.theme === "light" ? secondaryColor : secondaryDarkColor};
   div {
