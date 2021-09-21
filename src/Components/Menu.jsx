@@ -58,7 +58,6 @@ const MyMenuItem = styled.div`
   padding-bottom: 4rem;
   vertical-align: middle;
   font-family: "Roboto", sans-serif;
-  font-weight: lighter;
   color: ${(props) =>
     props.theme === "light" ? secondaryColor : secondaryDarkColor} !important;
   a {
@@ -79,7 +78,6 @@ const MyMenuItem = styled.div`
     vertical-align: middle;
     padding-right: 1rem;
     font-family: "Roboto", sans-serif;
-    font-weight: lighter;
 
     :hover {
       a {
