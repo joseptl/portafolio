@@ -93,53 +93,54 @@ const MyMenuItem = styled.div`
   }
 `;
 const MyMenuButton = styled.div`
-    display: block;
-    width: 30px;
-    height: 30px;
-    margin-right: 0.5rem;
-    position: relative;
-    z-index: 9;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+  position: relative;
+  z-index: 9;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
   @media ${device.laptop} {
     display: none;
   }
-  span{
+  span {
     display: block;
     width: 100%;
     height: 2px;
     position: absolute;
-    opacity: ${props=>props.open? 0 : 1};
+    opacity: ${(props) => (props.open ? 0 : 1)};
     top: 50%;
     background-color: ${(props) =>
-    props.theme === "light" ? secondaryColor : secondaryDarkColor};
+      props.theme === "light" ? secondaryColor : secondaryDarkColor};
     transform: translate(0, -50%);
     transition: opacity 0.3s 0.3s;
-    
   }
   ::before,
-  ::after{
+  ::after {
     content: "";
     display: block;
     width: 100%;
     height: 2px;
     position: absolute;
     background-color: ${(props) =>
-    props.theme === "light" ? secondaryColor : secondaryDarkColor};
-    transition: ${props=>props.open?"top 0.3s, bottom 0.3s, transform 0.3s 0.3s":"transform 0.3s, top 0.3s 0.3s, bottom 0.3s 0.3s"};
+      props.theme === "light" ? secondaryColor : secondaryDarkColor};
+    transition: ${(props) =>
+      props.open
+        ? "top 0.3s, bottom 0.3s, transform 0.3s 0.3s"
+        : "transform 0.3s, top 0.3s 0.3s, bottom 0.3s 0.3s"};
   }
 
-  ::before{
-    top: ${props=>props.open?`calc(50% - 1px)`:`6px`};
-    transform: ${props=>props.open?`rotate(45deg)`:"none"};
+  ::before {
+    top: ${(props) => (props.open ? `calc(50% - 1px)` : `6px`)};
+    transform: ${(props) => (props.open ? `rotate(45deg)` : "none")};
   }
 
-  ::after{
-    bottom: ${props=>props.open?`calc(50% - 1px)`:`6px`};
-    transform: ${props=>props.open?`rotate(-45deg)`:"none"};
+  ::after {
+    bottom: ${(props) => (props.open ? `calc(50% - 1px)` : `6px`)};
+    transform: ${(props) => (props.open ? `rotate(-45deg)` : "none")};
   }
-
 `;
 
 const MyMenuContainer = styled.div`
